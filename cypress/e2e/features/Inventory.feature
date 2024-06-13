@@ -17,7 +17,7 @@ Feature: Item Filtering and Redirection
   Scenario: Validate user can complete the purchase process of two or more items
     Given I am on the home page
     When I add items to the cart
-     | item                |
+      | item                |
       | Samsung galaxy s6   |
       | Sony vaio i7        |
     Then I should see the order confirmation
