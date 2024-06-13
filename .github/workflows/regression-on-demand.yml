@@ -2,26 +2,26 @@ name: Regression Tests On-Demand
 
 on:
   workflow_dispatch:
-
+ branches:
+      - main
+      - test-action
 jobs:
   regression:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v2
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v2
       with:
-        node-version: '20'
-        cache: 'npm'
-
-    - name: Verify Node.js version
-      run: node -v
+        node-version: '14'
 
     - name: Install dependencies
       run: npm install
 
     - name: Run regression tests
+      if : alwais()
       run: npx cypress run --spec "cypress/e2e/features/**/*.feature"
+      
