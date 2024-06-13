@@ -1,0 +1,10 @@
+{
+  "newUser": {
+    "username": "newuser",
+    "password": "password"
+  },
+  "existingUser": {
+    "username": "admin",
+    "password": "admin"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "demoblaze-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inaki59/demoblaze-cucumber.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inaki59/demoblaze-cucumber/issues"
+  },
+  "homepage": "https://github.com/inaki59/demoblaze-cucumber#readme",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.6",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.1",
+    "cypress": "^13.11.0",
+    "esbuild": "^0.21.5"
+  }
+}
