@@ -9,5 +9,5 @@ jobs:
       - name: Install project dependencies
         run: npm install
       - name: Run cypress tests
-        run: npx cypress run test
+        run: npx cypress run test --browser chrome
         if: always()
