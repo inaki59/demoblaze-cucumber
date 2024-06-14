@@ -1,5 +1,5 @@
 name: Run test and generate artifacts
-on: [workflow_dispatch]
+on: [workflow_dispatch] 
 
 jobs:
   run-cypress-tests:
