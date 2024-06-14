@@ -39,32 +39,31 @@ class Homepage {
     }
     register() {
         cy.fixture("users").then((userData)=>{
-          cy.get('#sign-username').type(this.username);   
-          cy.get('#sign-password').type(userData.newUser.password); 
+          cy.get('#sign-username').clear().focus().type(this.username,{ delay: 100 });   
+          cy.get('#sign-password').type(userData.newUser.password,{ delay: 100 }); 
           cy.get('.modal-footer .btn-primary').contains('Sign up').click();
 
         })
     }
     loginUser(username, password){
 
-      cy.get('#loginusername').clear().focus().type(username, { delay: 100 });
-      cy.get('#loginpassword').clear().focus().type(password, { delay: 100 });
-     cy.wait(300)
+      cy.get('#loginusername').clear().focus().type(username, { delay: 200 });
+      cy.get('#loginpassword').clear().focus().type(password, { delay: 200 });
+      cy.wait(100)
       
   }
   loginIncomplete(username){
     cy.get('#loginusername').clear().focus().type(username, { delay: 100 });
 }
   clickToLogin(){
-    cy.wait(300)
     cy.get('button[onclick="logIn()"]').click();
   }
   logout(){
     cy.get("#logout2").click()
   }
   loginValidator(){
-      cy.wait(300)
-      cy.get("#nameofuser").should('be.visible');
+    cy.wait(200)
+    cy.get("#nameofuser").should('be.visible');
   }
   validateLogout(){
     cy.get("#nameofuser").should('not.be.visible');

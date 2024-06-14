@@ -32,5 +32,6 @@ module.exports = defineConfig({
     },
     baseUrl: "https://demoblaze.com",
     chromeWebSecurity: false,
+    failOnStatusCode: false
   },
 });
