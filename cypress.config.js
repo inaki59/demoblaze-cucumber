@@ -16,7 +16,6 @@ async function setupNodeEvents(on, config) {
 }
 module.exports = defineConfig({
   e2e: {
-    screenshotOnRunFailure: false,
     setupNodeEvents(on, config) {
       const browserify = require('@badeball/cypress-cucumber-preprocessor/browserify')
 
