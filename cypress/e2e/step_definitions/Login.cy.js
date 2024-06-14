@@ -18,7 +18,7 @@ When('I log in with username {string} and password {string}', (username, passwor
     HomePage.loginUser(username, password);
     HomePage.clickToLogin()
     HomePage.loginValidator()
-    HomePage.logout()
+   // HomePage.logout()
     });
   When("I try to log in without filling the required fields", () => {
     HomePage.loginIncomplete("pedrito");

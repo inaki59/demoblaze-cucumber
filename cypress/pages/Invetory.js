@@ -37,12 +37,12 @@ class Inventory{
       proceedToCheckout() {
         cy.get('#cartur').click();
         cy.contains('Place Order').click();
-        cy.get('#name').type('John Doe');
-        cy.get('#country').type('USA');
-        cy.get('#city').type('New York');
-        cy.get('#card').type('1234567812345678');
-        cy.get('#month').type('12');
-        cy.get('#year').type('2024');
+        cy.get('#name').clear().focus().type('John Doe');
+        cy.get('#country').clear().focus().type('USA');
+        cy.get('#city').clear().focus().type('New York');
+        cy.get('#card').clear().focus().type('1234567812345678');
+        cy.get('#month').clear().focus().type('12');
+        cy.get('#year').clear().focus().type('2024');
         cy.contains('Purchase').click();
       }
       verifyOrderConfirmation() {

@@ -12,7 +12,7 @@ jobs:
       - name: Create reports directory
         run: mkdir -p cypress/reports/ cypress/screenshots/
       - name: Run cypress tests
-        run: npx cypress run
+        run: npx cypress run --browser chrome
       - name: Generate test artifacts
         uses: actions/upload-artifact@v4
         if: always()
