@@ -1,5 +1,5 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-const HomePage = require('../../pages/HomePage');
+const HomePage = require('../../pages/Homepage');
 
 
 Given('navigate to form sign up', () => {

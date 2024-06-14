@@ -1,4 +1,4 @@
-class HomePage {
+class Homepage {
     constructor(){
 
     }
@@ -90,5 +90,5 @@ class HomePage {
   }
   }
   
-module.exports=new HomePage();
+module.exports=new Homepage();
   
