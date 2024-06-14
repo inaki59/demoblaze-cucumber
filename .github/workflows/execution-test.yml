@@ -1,4 +1,4 @@
-name: Run test
+name: Run test and generate artifacts
 on: [workflow_dispatch]
 jobs:
   run-cypress-tests:
@@ -9,5 +9,12 @@ jobs:
       - name: Install project dependencies
         run: npm install
       - name: Run cypress tests
-        run: npx cypress run test --browser chrome
+        run: npx cypress run
+      - name: Generate test artifacts
+        uses: actions/upload-artifact@v4
         if: always()
+        with:
+          name: test-results
+          path: |
+            cypress/reports/
+            cypress/screenshots/
