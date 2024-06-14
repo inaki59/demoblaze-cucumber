@@ -16,6 +16,7 @@ async function setupNodeEvents(on, config) {
 }
 module.exports = defineConfig({
   e2e: {
+    screenshotOnRunFailure: false,
     setupNodeEvents(on, config) {
       const browserify = require('@badeball/cypress-cucumber-preprocessor/browserify')
 
@@ -32,6 +33,7 @@ module.exports = defineConfig({
     },
     baseUrl: "https://demoblaze.com",
     chromeWebSecurity: false,
-    failOnStatusCode: false
+    failOnStatusCode: false,
+    
   },
 });
