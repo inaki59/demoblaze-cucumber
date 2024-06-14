@@ -2,7 +2,7 @@ name: Regression Tests On-Demand
 
 on:
   workflow_dispatch:
- branches:
+  branches:
       - main
       - test-action
 jobs:
