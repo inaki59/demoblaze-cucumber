@@ -15,7 +15,9 @@ When('I add items to the cart', (dataTable) => {
   dataTable.hashes().forEach(row => {
   Invetory.addItemToCart(row.item);
   });
+  inventory.checkPrice();
   inventory.proceedToCheckout();
+
 });
   
   Then('I should be redirected to the description page of {string}', (item) => {
@@ -25,5 +27,5 @@ When('I add items to the cart', (dataTable) => {
     inventory.verifyItemsInCategory(category);
 });
 Then('I should see the order confirmation', () => {
-  inventory.verifyOrderConfirmation();
+  inventory.cardEmpty()
 });

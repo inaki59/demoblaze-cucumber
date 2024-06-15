@@ -46,7 +46,7 @@ class Homepage {
         })
     }
     loginUser(username, password){
-      cy.get('#loginusername').should('be.visible').clear().focus().type(username, { delay: 100 });
+      cy.get('#loginusername').should('be.visible').clear().focus().type(username, { delay: 200 });
       cy.get('#loginpassword').should('be.visible').clear().focus().type(password, { delay: 100 });
       
   }

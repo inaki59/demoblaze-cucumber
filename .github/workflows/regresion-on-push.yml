@@ -4,6 +4,25 @@ on:
   workflow_dispatch:
 
 jobs:
+  run-cypress-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.5
+      - name: Install project dependencies
+        run: npm install
+      - name: Create reports directory
+        run: mkdir -p cypress/reports/ cypress/screenshots/
+      - name: Run cypress tests
+        run: npx cypress run --browser chrome
+      - name: Generate test artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: |
+            cypress/reports/
+            cypress/screenshots/
   regression:
     runs-on: ubuntu-latest
 
