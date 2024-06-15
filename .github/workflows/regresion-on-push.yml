@@ -9,12 +9,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
       - name: Install project dependencies
         run: npm install
+
       - name: Create reports directory
         run: mkdir -p cypress/reports/ cypress/screenshots/
+
       - name: Run cypress tests
         run: npx cypress run --browser chrome
+
       - name: Generate test artifacts
         uses: actions/upload-artifact@v4
         if: always()
@@ -23,20 +32,21 @@ jobs:
           path: |
             cypress/reports/
             cypress/screenshots/
+
   regression:
     runs-on: ubuntu-latest
-
+    needs: run-cypress-tests  # Asegurarse de que el trabajo de cypress tests se ejecute primero
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4  
+      - name: Checkout code
+        uses: actions/checkout@v4.1.5  
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3 
-      with:
-        node-version: '20'
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run regression tests
-      run: npx cypress run --spec "cypress/e2e/features/**/*.feature"
+      - name: Run regression tests
+        run: npx cypress run --spec "cypress/e2e/features/**/*.feature"
